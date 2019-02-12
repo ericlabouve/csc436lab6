@@ -20,6 +20,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     var apiString5DayForecast: String = "https://api.openweathermap.org/data/2.5/forecast?zip=95030,us&units=imperial&appid=f49a4f5c9444208cb08289bd9998e0b3"
     var forecast: [ForecastService.Period] = []
     
+    //MARK: - View Controller Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Make the API call to receive the weather data
@@ -46,15 +48,24 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         task.resume()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RootToDetailSegue" {
+            if let indexPath = table.indexPathForSelectedRow {
+                let weatherPeriod = rows[(indexPath as NSIndexPath).row]
+                (segue.destination as! DetailViewController).weatherPeriod = weatherPeriod
+            }
+        }
+    }
+    
     //MARK: - Data Processing and Reshaping
     
     // Search through all the periods to find the high and low temperatures for the forecast
     // Set the top labels with theday/time and temperature when data is found
     func setPeriodSummary() {
         var copyForecast = rows
-        copyForecast.sort { $0.highTemp < $1.highTemp }
-        let high = copyForecast[0]
         copyForecast.sort { $0.highTemp > $1.highTemp }
+        let high = copyForecast[0]
+        copyForecast.sort { $0.highTemp < $1.highTemp }
         let low = copyForecast[0]
         summaryHigh.text = "High of " + String(high.highTemp) + "°F on " + high.dateAndTime
         summaryLow.text = "Low of " + String(low.highTemp) + "°F on " + low.dateAndTime
@@ -63,7 +74,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Extract data from each ForecastService.Period into a WeatherPeriod object and append to rows table
     func processForcast() {
         for period in forecast {
-            rows.append(WeatherPeriod(dateAndTimeAsUnixTime: period.dt, conditions: period.weather[0].description, highTemp: period.main.temp_max, lowTemp: period.main.temp_min, windSpeed: period.wind.speed, windDirection: period.wind.deg, humidity: period.main.humidity))
+            rows.append(WeatherPeriod(dateAndTimeAsUnixTime: period.dt, conditions: period.weather[0].description, highTemp: period.main.temp_max, lowTemp: period.main.temp_min, windSpeed: period.wind.speed, windDirection: period.wind.deg, humidity: period.main.humidity, iconID: period.weather[0].icon))
         }
     }
     

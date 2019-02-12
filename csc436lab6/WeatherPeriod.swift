@@ -17,8 +17,9 @@ class WeatherPeriod: Codable {
     var windSpeed: Double
     var windDirection: Double
     var humidity: Int
+    var iconID: String
     
-    init(dateAndTimeAsUnixTime: Int, conditions: String, highTemp: Double, lowTemp: Double, windSpeed: Double, windDirection: Double, humidity: Int) {
+    init(dateAndTimeAsUnixTime: Int, conditions: String, highTemp: Double, lowTemp: Double, windSpeed: Double, windDirection: Double, humidity: Int, iconID: String) {
         let df = DateFormatter()
         df.dateStyle = .medium
         df.timeStyle = .medium
@@ -29,5 +30,6 @@ class WeatherPeriod: Codable {
         self.windSpeed = windSpeed
         self.windDirection = windDirection
         self.humidity = humidity
+        self.iconID = iconID
     }
 }

@@ -27,6 +27,7 @@ struct ForecastService: Codable {
     
     struct WeatherBody: Codable {
         let description: String
+        let icon: String
     }
     
     struct WindBody: Codable {
