@@ -15,14 +15,14 @@ class WeatherPeriod: Codable {
     var highTemp: Double
     var lowTemp: Double
     var windSpeed: Double
-    var windDirection: Int
+    var windDirection: Double
     var humidity: Int
     
-    init(dateAndTimeAsUnixTime: Double, conditions: String, highTemp: Double, lowTemp: Double, windSpeed: Double, windDirection: Int, humidity: Int) {
+    init(dateAndTimeAsUnixTime: Int, conditions: String, highTemp: Double, lowTemp: Double, windSpeed: Double, windDirection: Double, humidity: Int) {
         let df = DateFormatter()
         df.dateStyle = .medium
         df.timeStyle = .medium
-        dateAndTime = df.string(from: Date(timeIntervalSince1970: dateAndTimeAsUnixTime))
+        dateAndTime = df.string(from: Date(timeIntervalSince1970: Double(dateAndTimeAsUnixTime)))
         self.conditions = conditions
         self.highTemp = highTemp
         self.lowTemp = lowTemp

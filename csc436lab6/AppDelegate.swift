@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Added this to make start point at NavController work but it didn't work... :'(
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "RootViewController")
+//        self.window?.rootViewController = RootViewController()
+//        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -40,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

@@ -17,6 +17,7 @@
 		48DF0104221239CA0066705B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF0103221239CA0066705B /* DetailViewController.swift */; };
 		48DF010622123A2D0066705B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF010522123A2D0066705B /* CustomTableViewCell.swift */; };
 		48DF010822123E400066705B /* WeatherPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF010722123E400066705B /* WeatherPeriod.swift */; };
+		48DF010A2212A54F0066705B /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF01092212A54F0066705B /* ForecastService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		48DF0103221239CA0066705B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		48DF010522123A2D0066705B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		48DF010722123E400066705B /* WeatherPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPeriod.swift; sourceTree = "<group>"; };
+		48DF01092212A54F0066705B /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				48DF00D5221233130066705B /* AppDelegate.swift */,
 				48DF00D7221233130066705B /* RootViewController.swift */,
 				48DF00D9221233130066705B /* Main.storyboard */,
+				48DF01092212A54F0066705B /* ForecastService.swift */,
 				48DF010522123A2D0066705B /* CustomTableViewCell.swift */,
 				48DF0103221239CA0066705B /* DetailViewController.swift */,
 				48DF00DC221233130066705B /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 				48DF00D8221233130066705B /* RootViewController.swift in Sources */,
 				48DF010622123A2D0066705B /* CustomTableViewCell.swift in Sources */,
 				48DF00D6221233130066705B /* AppDelegate.swift in Sources */,
+				48DF010A2212A54F0066705B /* ForecastService.swift in Sources */,
 				48DF010822123E400066705B /* WeatherPeriod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
